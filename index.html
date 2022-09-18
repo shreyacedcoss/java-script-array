@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=I, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Filter and display the products with in a given price range.</h3>
+    <input type="text" id="minx" placeholder="minimum price">
+    <input type="text" id="maxy" placeholder="maximum  price">
+    <button onclick="search()">search</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    
+</body>
+<script>
+    var arr=[
+        {name:"samsung",model:"Galexy",memory:64,price:15000,},
+        {name:"nokia",model:"S730",memory:128,price:22000,},
+        {name:"xiomi",model:"Note",memory:32,price:12000,},
+        {name:"motorala",model:"G10",memory:32,price:15000,},
+        {name:"apple",model:"S12",memory:64,price:25000,},
+    ];
+    function search(){
+    var minx=document.getElementById("minx").value;
+    var maxy=document.getElementById("maxy").value;
+    var table="<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>Price</th></tr>"
+
+    arr.forEach(element => {
+        table+="<tr><td>"+
+      
+            
+        element.name+
+        "</td><td>"+
+        element.model+
+        "</td><td>"+
+        element.memory+
+        "</td><td>"+
+        element.price+
+        
+        "</td></tr>"
+        document.getElementById("p1").innerHTML= table
+    });
+   
+    table+= "</table>"
+    }
+</script>
+</html>
